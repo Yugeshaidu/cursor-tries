@@ -1,0 +1,13 @@
+INFO 2025-07-12 23:13:38,223 admin 3117 140335258747136 Django admin configuration loaded successfully
+INFO 2025-07-12 23:13:38,240 urls 3117 140335258747136 URL patterns loaded for main_app app
+INFO 2025-07-12 23:13:38,241 urls 3117 140335258747136 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:13:38,821 admin 3126 139705275224320 Django admin configuration loaded successfully
+INFO 2025-07-12 23:13:38,831 urls 3126 139705275224320 URL patterns loaded for main_app app
+INFO 2025-07-12 23:13:38,832 urls 3126 139705275224320 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:14:18,602 admin 3205 139980282392832 Django admin configuration loaded successfully
+INFO 2025-07-12 23:14:18,611 urls 3205 139980282392832 URL patterns loaded for main_app app
+INFO 2025-07-12 23:14:18,611 urls 3205 139980282392832 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:14:25,331 admin 3236 139715286397184 Django admin configuration loaded successfully
+INFO 2025-07-12 23:14:25,338 urls 3236 139715286397184 URL patterns loaded for main_app app
+INFO 2025-07-12 23:14:25,339 urls 3236 139715286397184 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:14:27,216 admin 3258 140563768791296 Django admin configuration loaded successfully

@@ -1,0 +1,21 @@
+# Django Simple Framework Requirements
+# This file lists all the Python packages required to run this Django project
+# To install these packages, run: pip install -r requirements.txt
+
+# Main framework
+Django==5.2.4          # The main Django web framework for building web applications
+
+# Database and ORM support
+sqlparse==0.5.3        # SQL parsing library used by Django for database operations
+
+# ASGI support for async operations
+asgiref==3.9.1         # ASGI (Asynchronous Server Gateway Interface) support for Django
+
+# Image processing library for ImageField support
+Pillow==11.3.0         # Python Imaging Library for handling images (profile pictures, etc.)
+
+# Additional useful packages for development
+# Uncomment these as needed for your project:
+# django-debug-toolbar  # Debugging toolbar for Django development
+# django-extensions    # Additional Django management commands and utilities
+# python-decouple      # For managing environment variables and settings
