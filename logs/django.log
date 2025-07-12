@@ -11,3 +11,13 @@ INFO 2025-07-12 23:14:25,331 admin 3236 139715286397184 Django admin configurati
 INFO 2025-07-12 23:14:25,338 urls 3236 139715286397184 URL patterns loaded for main_app app
 INFO 2025-07-12 23:14:25,339 urls 3236 139715286397184 Main project URL patterns loaded successfully
 INFO 2025-07-12 23:14:27,216 admin 3258 140563768791296 Django admin configuration loaded successfully
+INFO 2025-07-12 23:15:03,928 admin 3596 139932462006528 Django admin configuration loaded successfully
+INFO 2025-07-12 23:15:03,937 urls 3596 139932462006528 URL patterns loaded for main_app app
+INFO 2025-07-12 23:15:03,938 urls 3596 139932462006528 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:16:39,976 admin 3853 140057253409024 Django admin configuration loaded successfully
+INFO 2025-07-12 23:16:40,138 admin 3854 140032183980288 Django admin configuration loaded successfully
+INFO 2025-07-12 23:16:40,145 autoreload 3854 140032183980288 Watching for file changes with StatReloader
+INFO 2025-07-12 23:16:40,147 urls 3854 140032144926400 URL patterns loaded for main_app app
+INFO 2025-07-12 23:16:40,148 urls 3854 140032144926400 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:16:47,647 views 3854 140032128054976 Home page visited by user: AnonymousUser
+ERROR 2025-07-12 23:16:47,670 basehttp 3854 140032128054976 "GET / HTTP/1.1" 500 167396
