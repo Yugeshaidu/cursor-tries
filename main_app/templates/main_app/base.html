@@ -375,27 +375,27 @@ TEMPLATE INHERITANCE EXPLANATION 📚
 This base template uses Django's template inheritance system!
 
 TEMPLATE BLOCKS 📦
-- {% block title %}: Page title (appears in browser tab)
-- {% block description %}: Meta description for SEO
-- {% block extra_css %}: Additional CSS for specific pages  
-- {% block content %}: Main page content (REQUIRED)
-- {% block extra_js %}: Additional JavaScript for specific pages
+- {# {% block title %} #}: Page title (appears in browser tab)
+- {# {% block description %} #}: Meta description for SEO
+- {# {% block extra_css %} #}: Additional CSS for specific pages  
+- {# {% block content %} #}: Main page content (REQUIRED)
+- {# {% block extra_js %} #}: Additional JavaScript for specific pages
 
 HOW TO USE THIS TEMPLATE 🎯
 In your child templates, start with:
-{% extends 'main_app/base.html' %}
+{# {% extends 'main_app/base.html' %} #}
 
 Then define your blocks:
-{% block title %}My Page Title{% endblock %}
-{% block content %}
+{# {% block title %}My Page Title{% endblock %} #}
+{# {% block content %} #}
     <h1>My page content goes here!</h1>
-{% endblock %}
+{# {% endblock %} #}
 
 DJANGO TEMPLATE TAGS USED 🏷️
-- {% url 'main_app:home' %}: Generates URL by name
-- {% if user.is_authenticated %}: Conditional logic
-- {% for message in messages %}: Loop through items
-- {{ user.username }}: Display variable content
+- {# {% url 'main_app:home' %} #}: Generates URL by name
+- {# {% if user.is_authenticated %} #}: Conditional logic
+- {# {% for message in messages %} #}: Loop through items
+- {# {{ user.username }} #}: Display variable content
 
 CSS FRAMEWORK 🎨
 We use Bootstrap 5 for styling:

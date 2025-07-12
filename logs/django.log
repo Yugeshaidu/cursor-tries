@@ -21,3 +21,25 @@ INFO 2025-07-12 23:16:40,147 urls 3854 140032144926400 URL patterns loaded for m
 INFO 2025-07-12 23:16:40,148 urls 3854 140032144926400 Main project URL patterns loaded successfully
 INFO 2025-07-12 23:16:47,647 views 3854 140032128054976 Home page visited by user: AnonymousUser
 ERROR 2025-07-12 23:16:47,670 basehttp 3854 140032128054976 "GET / HTTP/1.1" 500 167396
+INFO 2025-07-12 23:17:08,009 admin 4008 140478963077376 Django admin configuration loaded successfully
+INFO 2025-07-12 23:17:08,015 urls 4008 140478963077376 URL patterns loaded for main_app app
+INFO 2025-07-12 23:17:08,016 urls 4008 140478963077376 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:18:46,252 views 3854 140032128054976 Home page visited by user: AnonymousUser
+ERROR 2025-07-12 23:18:46,272 basehttp 3854 140032128054976 "GET / HTTP/1.1" 500 167396
+INFO 2025-07-12 23:18:46,272 basehttp 3854 140032128054976 - Broken pipe from ('127.0.0.1', 47476)
+INFO 2025-07-12 23:19:46,987 views 3854 140032128054976 Home page visited by user: AnonymousUser
+ERROR 2025-07-12 23:19:47,010 basehttp 3854 140032128054976 "GET / HTTP/1.1" 500 167396
+INFO 2025-07-12 23:19:47,010 basehttp 3854 140032128054976 - Broken pipe from ('127.0.0.1', 47620)
+INFO 2025-07-12 23:19:55,640 admin 4419 140370703614208 Django admin configuration loaded successfully
+INFO 2025-07-12 23:19:55,826 admin 4420 140250268352768 Django admin configuration loaded successfully
+INFO 2025-07-12 23:19:55,834 autoreload 4420 140250268352768 Watching for file changes with StatReloader
+INFO 2025-07-12 23:19:55,837 urls 4420 140250268352768 URL patterns loaded for main_app app
+INFO 2025-07-12 23:19:55,838 urls 4420 140250268352768 Main project URL patterns loaded successfully
+INFO 2025-07-12 23:20:02,620 views 4420 140250143782592 Home page visited by user: AnonymousUser
+ERROR 2025-07-12 23:20:02,645 basehttp 4420 140250143782592 "GET / HTTP/1.1" 500 167396
+INFO 2025-07-12 23:20:02,645 basehttp 4420 140250143782592 - Broken pipe from ('127.0.0.1', 47480)
+INFO 2025-07-12 23:20:50,882 views 4420 140250143782592 Home page visited by user: AnonymousUser
+INFO 2025-07-12 23:20:50,891 basehttp 4420 140250143782592 "GET / HTTP/1.1" 200 26401
+INFO 2025-07-12 23:20:58,097 basehttp 4420 140250143782592 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-12 23:20:59,297 views 4420 140250143782592 API hello endpoint called by user: AnonymousUser
+INFO 2025-07-12 23:20:59,297 basehttp 4420 140250143782592 "GET /api/hello/ HTTP/1.1" 200 110
