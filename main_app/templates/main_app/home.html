@@ -1,0 +1,466 @@
+{% extends 'main_app/base.html' %}
+
+<!-- 
+Home Page Template
+
+What is this file? 🏠
+This is the HOME PAGE template that users see when they visit your website!
+It extends the base template and fills in the content block.
+
+Template Inheritance Example:
+- base.html provides the structure (navigation, footer, styles)
+- home.html provides the specific content for the homepage
+-->
+
+<!-- Override the page title 📝 -->
+{% block title %}
+    Home - Django Simple Framework
+{% endblock title %}
+
+<!-- Override the meta description for SEO 🔍 -->
+{% block description %}
+    Welcome to Django Simple Framework - a comprehensive learning platform for Django web development with detailed comments and logging.
+{% endblock description %}
+
+<!-- Add custom CSS for this page only 🎨 -->
+{% block extra_css %}
+<style>
+    /* Custom styles for home page with comments */
+    
+    /* Hero section styling */
+    .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4rem 0;
+        margin: -2rem 0 3rem 0;
+        border-radius: 0 0 1rem 1rem;
+    }
+    
+    /* Feature cards styling */
+    .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Statistics styling */
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+    
+    /* Code example styling */
+    .code-example {
+        background-color: #f8f9fa;
+        border-left: 4px solid #007bff;
+        font-family: 'Courier New', monospace;
+    }
+</style>
+{% endblock extra_css %}
+
+<!-- Main page content 📄 -->
+{% block content %}
+
+<!-- Hero Section 🦸 -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 mb-3">
+                    <i class="fas fa-rocket"></i> 
+                    Welcome to Django Simple Framework!
+                </h1>
+                <p class="lead mb-4">
+                    A comprehensive Django starter project designed for beginners. 
+                    Every line of code is commented to help you learn web development 
+                    the right way with proper logging and best practices.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="{% url 'main_app:about' %}" class="btn btn-light btn-lg">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </a>
+                    <a href="{% url 'main_app:contact' %}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-envelope"></i> Get Started
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <!-- Django logo or illustration would go here -->
+                <i class="fas fa-code" style="font-size: 8rem; opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- User Welcome Section 👋 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="content-card card">
+            <div class="card-body text-center">
+                {% if user.is_authenticated %}
+                    <!-- Personalized welcome for logged-in users -->
+                    <h2 class="card-title">
+                        <i class="fas fa-user-check text-success"></i> 
+                        Welcome back, {{ user.username }}!
+                    </h2>
+                    <p class="card-text">
+                        You're logged in and ready to explore all the features. 
+                        Check out the <a href="{% url 'main_app:protected' %}">protected area</a> 
+                        or visit the <a href="{% url 'admin:index' %}">admin panel</a>.
+                    </p>
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i> 
+                        Authentication system is working perfectly!
+                    </div>
+                {% else %}
+                    <!-- Welcome for anonymous users -->
+                    <h2 class="card-title">
+                        <i class="fas fa-hand-wave text-primary"></i> 
+                        Hello, Visitor!
+                    </h2>
+                    <p class="card-text">
+                        Welcome to our Django demonstration site. 
+                        You can <a href="/accounts/login/">log in</a> to access more features 
+                        or explore the public areas of the site.
+                    </p>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> 
+                        This demonstrates Django's built-in authentication system!
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section 🌟 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-star"></i> Framework Features
+        </h2>
+    </div>
+    
+    <!-- Feature 1: Comprehensive Comments -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-comments text-primary" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">Detailed Comments</h5>
+                <p class="card-text">
+                    Every line of code is commented to explain what it does 
+                    and why. Perfect for learning Django!
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature 2: Logging System -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-file-alt text-success" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">Complete Logging</h5>
+                <p class="card-text">
+                    Built-in logging system tracks all activities and errors. 
+                    Check the logs folder for detailed information.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature 3: Best Practices -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-award text-warning" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">Best Practices</h5>
+                <p class="card-text">
+                    Follows Django best practices for security, performance, 
+                    and maintainability. Production-ready structure.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature 4: Admin Interface -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-cog text-info" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">Admin Panel</h5>
+                <p class="card-text">
+                    Fully configured Django admin with custom interfaces 
+                    for managing your data efficiently.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature 5: Responsive Design -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-mobile-alt text-danger" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">Mobile Responsive</h5>
+                <p class="card-text">
+                    Built with Bootstrap 5 for perfect display on all devices. 
+                    Mobile-first responsive design.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature 6: API Ready -->
+    <div class="col-md-4 mb-4">
+        <div class="feature-card card">
+            <div class="card-body text-center">
+                <div class="mb-3">
+                    <i class="fas fa-code text-secondary" style="font-size: 3rem;"></i>
+                </div>
+                <h5 class="card-title">API Endpoints</h5>
+                <p class="card-text">
+                    Includes example API endpoints for building modern 
+                    web applications with JSON responses.
+                </p>
+                <a href="{% url 'main_app:api_hello' %}" class="btn btn-sm btn-outline-primary">
+                    Try API Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Start Guide 🚀 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="content-card card">
+            <div class="card-header">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-rocket"></i> Quick Start Guide
+                </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-list-ol"></i> Getting Started</h5>
+                        <ol>
+                            <li>Activate virtual environment: <code>source django_env/bin/activate</code></li>
+                            <li>Install requirements: <code>pip install -r requirements.txt</code></li>
+                            <li>Run migrations: <code>python manage.py migrate</code></li>
+                            <li>Create superuser: <code>python manage.py createsuperuser</code></li>
+                            <li>Start server: <code>python manage.py runserver</code></li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-map"></i> Project Structure</h5>
+                        <div class="code-example p-3 rounded">
+                            <pre><code>workspace/
+├── manage.py          # Django management script
+├── logs/              # Error and activity logs  
+├── main_app/          # Main application
+│   ├── models.py      # Database models
+│   ├── views.py       # Request handlers
+│   ├── templates/     # HTML templates
+│   └── admin.py       # Admin configuration
+└── simple_django_framework/  # Project settings</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Section 📊 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">
+            <i class="fas fa-chart-bar"></i> Framework Statistics
+        </h2>
+    </div>
+    
+    <div class="col-md-3 text-center mb-4">
+        <div class="stat-number">500+</div>
+        <p>Lines of Comments</p>
+    </div>
+    
+    <div class="col-md-3 text-center mb-4">
+        <div class="stat-number">15+</div>
+        <p>Django Features</p>
+    </div>
+    
+    <div class="col-md-3 text-center mb-4">
+        <div class="stat-number">100%</div>
+        <p>Beginner Friendly</p>
+    </div>
+    
+    <div class="col-md-3 text-center mb-4">
+        <div class="stat-number">∞</div>
+        <p>Learning Potential</p>
+    </div>
+</div>
+
+<!-- Call to Action 📞 -->
+<div class="row">
+    <div class="col-12">
+        <div class="content-card card text-center">
+            <div class="card-body">
+                <h3 class="card-title">
+                    <i class="fas fa-graduation-cap"></i> Ready to Learn Django?
+                </h3>
+                <p class="card-text">
+                    Explore the codebase, read the comments, and start building amazing web applications!
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="{% url 'main_app:about' %}" class="btn btn-primary">
+                        <i class="fas fa-book"></i> Read Documentation
+                    </a>
+                    <a href="{% url 'main_app:contact' %}" class="btn btn-success">
+                        <i class="fas fa-comments"></i> Get Support
+                    </a>
+                    <a href="{% url 'admin:index' %}" class="btn btn-info">
+                        <i class="fas fa-cog"></i> Admin Panel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+<!-- Add custom JavaScript for this page only 📜 -->
+{% block extra_js %}
+<script>
+    // Custom JavaScript for home page with detailed comments
+    
+    /**
+     * Home page specific functionality
+     * This JavaScript runs only on the home page!
+     */
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🏠 Home page loaded successfully!');
+        
+        // Add click tracking for feature cards
+        var featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach(function(card, index) {
+            card.addEventListener('click', function() {
+                console.log('📊 Feature card clicked:', index + 1);
+                // In a real app, you might send this data to analytics
+            });
+        });
+        
+        // Add hover effects to statistics
+        var statNumbers = document.querySelectorAll('.stat-number');
+        statNumbers.forEach(function(stat) {
+            stat.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            stat.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Animate statistics when they come into view
+        function animateStats() {
+            var stats = document.querySelectorAll('.stat-number');
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        // Add animation class when visible
+                        entry.target.style.animation = 'bounceIn 0.8s ease-out';
+                    }
+                });
+            });
+            
+            stats.forEach(function(stat) {
+                observer.observe(stat);
+            });
+        }
+        
+        // Initialize animations
+        animateStats();
+        
+        // Show welcome toast for first-time visitors
+        if (!localStorage.getItem('welcomeShown')) {
+            setTimeout(function() {
+                showToast('Welcome to Django Simple Framework! 🚀', 'success');
+                localStorage.setItem('welcomeShown', 'true');
+            }, 1000);
+        }
+    });
+    
+    // Add CSS animation keyframes
+    var style = document.createElement('style');
+    style.textContent = `
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+{% endblock extra_js %}
+
+<!-- 
+TEMPLATE EXPLANATION FOR BEGINNERS 📚
+
+WHAT THIS TEMPLATE DOES:
+1. Extends base.html for consistent layout
+2. Overrides specific blocks (title, description, content)
+3. Adds custom CSS and JavaScript for this page only
+4. Uses Django template tags for dynamic content
+
+DJANGO TEMPLATE FEATURES USED:
+- {# {% extends %} #}: Inherit from base template
+- {# {% block %} #}: Define sections that can be overridden
+- {# {% url %} #}: Generate URLs by name (prevents hardcoding)
+- {# {% if %} #}: Conditional content based on user login status
+- {# {{ variable }} #}: Display dynamic content
+
+BOOTSTRAP COMPONENTS USED:
+- Grid system (row/col classes) for responsive layout
+- Cards for content organization
+- Buttons with different styles
+- Alerts for messages
+- Responsive utilities
+
+CSS FEATURES:
+- Custom hover effects on cards
+- Gradient backgrounds
+- Smooth transitions
+- Mobile-responsive design
+
+JAVASCRIPT FEATURES:
+- Event listeners for user interactions
+- Local storage for user preferences
+- Intersection observer for animations
+- Dynamic CSS injection
+
+This home page demonstrates a complete Django template with:
+✅ Responsive design
+✅ User authentication awareness  
+✅ Interactive elements
+✅ Clean, commented code
+✅ Best practices
+-->
